@@ -53,6 +53,7 @@ def count_down(count):
         global timer
         timer = window.after(1000, count_down, count - 1)
     else:
+        window.bell()  # Play a beep sound when the countdown finishes
         start_timer()
         marks = ""
         work_sessions = reps // 2
