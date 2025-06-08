@@ -19,7 +19,7 @@ def reset_timer():
     window.after_cancel(timer)
     reps = 0
     canvas.itemconfig(timer_text,text="00:00")
-    timer_label.config(text="Timer",fg= GREEN)
+    timer_label.config(text="Timer", fg=GREEN, bg=YELLOW)
     check_marks.config(text="")
 # ---------------------------- TIMER MECHANISM ------------------------------- #
 
@@ -33,13 +33,13 @@ def start_timer():
 
     if reps % 8 == 0:
         count_down(long_break_sec)
-        timer_label.config(text="Break", fg=RED)
+        timer_label.config(text="Break", fg=RED, bg=YELLOW)
     elif reps % 2 == 0:
         count_down(short_break_sec)
-        timer_label.config(text="Break", fg=PINK)
+        timer_label.config(text="Break", fg=PINK, bg=YELLOW)
     else:
         count_down(work_sec)
-        timer_label.config(text="Work", fg=GREEN)
+        timer_label.config(text="Work", fg=GREEN, bg=YELLOW)
 
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- #
 
