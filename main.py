@@ -63,35 +63,32 @@ def count_down(count):
 
 # ---------------------------- UI SETUP ------------------------------- #
 
-window = Tk()
-window.title("Pomodoro")
-window.config(padx=100,pady=50,bg=YELLOW)
-#Timer label Top
-timer_label = Label(text="Timer",bg=GREEN,fg=YELLOW,font=(FONT_NAME,50))
-timer_label.grid(column=1,row=0)
+if __name__ == "__main__":
+    window = Tk()
+    window.title("Pomodoro")
+    window.config(padx=100,pady=50,bg=YELLOW)
+    #Timer label Top
+    timer_label = Label(text="Timer",bg=GREEN,fg=YELLOW,font=(FONT_NAME,50))
+    timer_label.grid(column=1,row=0)
 
 
-canvas = Canvas(width=200,height=224,bg=YELLOW,highlightthickness=0)
-canvas.grid(column=1,row=1)
+    canvas = Canvas(width=200,height=224,bg=YELLOW,highlightthickness=0)
+    canvas.grid(column=1,row=1)
 
-tomato_img= PhotoImage(file="tomato.png")
-canvas.create_image(100,112,image=tomato_img )
-timer_text = canvas.create_text(100,112,text="00:00",fill="white",font=(FONT_NAME,35,"bold"))
-#START and Reset buttons (botton left and right)
-start_button = Button(text="Start",command=start_timer)
-start_button.grid(column=0,row=2)
+    tomato_img= PhotoImage(file="tomato.png")
+    canvas.create_image(100,112,image=tomato_img )
+    timer_text = canvas.create_text(100,112,text="00:00",fill="white",font=(FONT_NAME,35,"bold"))
+    #START and Reset buttons (botton left and right)
+    start_button = Button(text="Start",command=start_timer)
+    start_button.grid(column=0,row=2)
 
-reset_button = Button(text="Reset",command=reset_timer)
-reset_button.grid(column=2,row=2)
+    reset_button = Button(text="Reset",command=reset_timer)
+    reset_button.grid(column=2,row=2)
 
-#Check marks or Progress below
-check_marks = Label(text= "",fg=GREEN,bg=YELLOW)
-check_marks.grid(column=1,row=3)
+    #Check marks or Progress below
+    check_marks = Label(text= "",fg=GREEN,bg=YELLOW)
+    check_marks.grid(column=1,row=3)
 
-check_marks.config(text="✔")
+    check_marks.config(text="✔")
 
-
-
-
-
-window.mainloop()
+    window.mainloop()
